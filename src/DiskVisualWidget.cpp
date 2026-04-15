@@ -25,7 +25,12 @@ void DiskVisualWidget::highlightRaid(const QString &raidDev)
 QSize DiskVisualWidget::sizeHint() const
 {
     int rows = m_disks.size();
-    return QSize(600, rows * (ROW_H + VGAP) + 8);
+    return QSize(400, rows * (ROW_H + VGAP) + 8);
+}
+
+QSize DiskVisualWidget::minimumSizeHint() const
+{
+    return QSize(200, 3 * (ROW_H + VGAP) + 8);
 }
 
 QColor DiskVisualWidget::colorForType(SegmentType t) const

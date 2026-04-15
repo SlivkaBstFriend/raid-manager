@@ -17,13 +17,13 @@
 #include <QProgressDialog>
 #include <QLabel>
 #include <QScrollArea>
+#include <QSplitter>
 #include <QGroupBox>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setWindowTitle("RAID Manager");
-    setMinimumSize(1050, 650);
-    resize(1200, 720);
+    resize(900, 600);
 
     m_backend = new MdadmBackend(this);
 
@@ -102,13 +102,16 @@ void MainWindow::setupUi()
     leftLayout->setContentsMargins(0,0,0,0);
     leftLayout->setSpacing(0);
 
+    // Вертикальный сплиттер между картой дисков и таблицей
+    auto *vSplitter = new QSplitter(Qt::Vertical);
+    vSplitter->setChildrenCollapsible(false);
+
     // Disk visual area (scrollable)
     m_diskMap = new DiskVisualWidget;
     auto *scroll = new QScrollArea;
     scroll->setWidget(m_diskMap);
     scroll->setWidgetResizable(true);
     scroll->setFrameShape(QFrame::NoFrame);
-    scroll->setMaximumHeight(340);
 
     auto *diskGroup = new QGroupBox("Блочные устройства");
     auto *dgl = new QVBoxLayout(diskGroup);
@@ -139,15 +142,18 @@ void MainWindow::setupUi()
 
     dgl->addWidget(legend);
     dgl->addWidget(scroll);
-    leftLayout->addWidget(diskGroup);
-
     // RAID table
     auto *raidGroup = new QGroupBox("RAID-массивы");
     auto *rgl = new QVBoxLayout(raidGroup);
     rgl->setContentsMargins(8,4,8,8);
     m_raidTable = new RaidTableWidget;
     rgl->addWidget(m_raidTable);
-    leftLayout->addWidget(raidGroup, 1);
+
+    vSplitter->addWidget(diskGroup);
+    vSplitter->addWidget(raidGroup);
+    vSplitter->setStretchFactor(0, 1);
+    vSplitter->setStretchFactor(1, 2);
+    leftLayout->addWidget(vSplitter, 1);
 
     // Right: queue panel
     m_queue = new QueuePanel;
@@ -155,8 +161,13 @@ void MainWindow::setupUi()
     m_queue->setMaximumWidth(320);
     m_queue->setStyleSheet("border-left:1px solid palette(midlight);");
 
-    rootLayout->addWidget(leftWidget, 1);
-    rootLayout->addWidget(m_queue);
+    auto *hSplitter = new QSplitter(Qt::Horizontal);
+    hSplitter->setChildrenCollapsible(false);
+    hSplitter->addWidget(leftWidget);
+    hSplitter->addWidget(m_queue);
+    hSplitter->setStretchFactor(0, 3);
+    hSplitter->setStretchFactor(1, 1);
+    rootLayout->addWidget(hSplitter);
 
     // Connections
     connect(m_diskMap, &DiskVisualWidget::segmentClicked,

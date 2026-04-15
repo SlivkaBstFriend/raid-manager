@@ -23,6 +23,7 @@ protected:
     void mousePressEvent(QMouseEvent *) override;
     void mouseMoveEvent(QMouseEvent *) override;
     QSize sizeHint() const override;
+    QSize minimumSizeHint() const override;
 
 private:
     struct SegRect { QRect rect; QString disk; QString raidDev; SegmentType type; };
