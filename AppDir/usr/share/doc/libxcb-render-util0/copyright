@@ -1,13 +1,13 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: xcb-util-renderutil
 Upstream-Contact: XCB Mailing List <xcb@lists.freedesktop.org>
-Source: https://xcb.freedesktop.org
+Source: http://xcb.freedesktop.org
 
 Files: *
 Copyright: 2000 Keith Packard <keithp@keithp.com>
            2006 Ian Osgood <iano@quirkster.com>
            2006 Jamey Sharp <jamey@minilop.net>
-License: Expat
+License: MIT/X Consortium License
  Permission is hereby granted, free of  charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction,  including without limitation the rights

@@ -36,7 +36,7 @@ Copyright:
  © 2009 Klaralvdalens Datakonsult AB, a KDAB Group company
  © 2009 Jonas Bähr
  © 2008-2012 Nokia Corporation
- © 2007-2023 Collabora Ltd.
+ © 2007-2022 Collabora Ltd.
  © 2009 Scott James Remnant / Canonical Ltd.
  © 2009 William Lachance
  © 2010 Christian Dywan / Lanedo
@@ -48,14 +48,10 @@ Copyright:
  © 2016 Yiyang Fei
  © 2017-2018 Laurent Bigonville
  © 2017 Shin-ichi MORITA
- © 2017 Endless OS Foundation, LLC
+ © 2017 Endless Mobile, Inc.
  © 2017 Thomas Zimmermann
  © 2018 KPIT Technologies Ltd.
  © 2018 Manish Narang
- © 2019-2020 Salamandar
- © 2022 Simon McVittie
- © 2022 Evgeny Vereshchagin
- © 2023 SUSE LLC
  "modified code from libassuan, (C) FSF"
 License: GPL-2+ or AFL-2.1, and Expat and Tcl-BSDish
 Comment:
@@ -82,7 +78,9 @@ License: GPL-2+
 Files:
  cmake/modules/FindDocBookXSL.cmake
  cmake/modules/FindGLIB2.cmake
+ tools/strto*ll.c
 Copyright:
+ © 1991-1993 The Regents of the University of California
  © 2008 Laurent Montel
  © 2010 Luigi Toscano
  © 2011 Raphael Kubo da Costa
@@ -90,12 +88,41 @@ Copyright:
 License: BSD-3-clause and BSD-3-clause-generic
 
 Files:
- dbus/dbus-backtrace-win.c
+ m4/as-ac-expand.m4
+ m4/ax_ac_append_to_file.m4
+ m4/ax_ac_print_to_file.m4
+ m4/ax_add_am_macro_static.m4
+ m4/ax_am_macros_static.m4
+ m4/ax_file_escapes.m4
 Copyright:
- © 2004 Eric Poech
- © 2004 Robert Shearman
- © 2010 Patrick von Reth
- © 2015 Ralf Habacker
+ © 2003-2005 Thomas Vander Stichele
+ © 2008-2009 Tom Howard
+ © 2009 Allan Caffee
+License: autoconf-archive-permissive
+Comment:
+ Some files lack the second sentence (the warranty disclaimer).
+
+Files:
+ m4/ld-version-script.m4
+ m4/libtool.m4
+ m4/ltoptions.m4
+ m4/ltsugar.m4
+ m4/ltversion.m4
+ m4/lt~obsolete.m4
+ m4/visibility.m4
+Copyright:
+ © 1996-2015 Free Software Foundation, Inc.
+License: FSF-unlimited-permission
+
+Files:
+ m4/ax_code_coverage.m4
+Copyright:
+ © 2012-2016 Philip Withnall
+ © 2012 Xan Lopez
+ © 2012 Christian Persch
+ © 2012 Paolo Borelli
+ © 2012 Dan Winship
+ © 2015-2018 Bastien ROUCARIES
 License: LGPL-2.1+
 
 Files: dbus/versioninfo.rc.in
@@ -108,12 +135,6 @@ License: g10-permissive
  This program is distributed in the hope that it will be useful, but
  WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-Files:
- subprojects/*.wrap
-Copyright:
- © 2022 Meson contributors
-License: Expat
 
 License: GPL-2+
  This program is free software; you can redistribute it and/or modify
@@ -167,6 +188,17 @@ License: Expat
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  DEALINGS IN THE SOFTWARE.
+
+License: autoconf-archive-permissive
+ Copying and distribution of this file, with or without modification, are
+ permitted in any medium without royalty provided the copyright notice
+ and this notice are preserved. This file is offered as-is, without any
+ warranty.
+
+License: FSF-unlimited-permission
+ This file is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
 
 License: Tcl-BSDish
  This software is copyrighted by the Regents of the University of

@@ -6,11 +6,12 @@ the same source package, or built from a separate same source package.
 Packaging is done by the Debian GCC Maintainers
 <debian-gcc@lists.debian.org>, with sources obtained from:
 
-  ftp://gcc.gnu.org/pub/gcc/releases/            (for full releases)
-  https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git   (for prereleases)
-  ftp://sourceware.org/pub/newlib/               (for newlib)
+  ftp://gcc.gnu.org/pub/gcc/releases/  (for full releases)
+  svn://gcc.gnu.org/svn/gcc/           (for prereleases)
+  ftp://sourceware.org/pub/newlib/     (for newlib)
+  git://git.savannah.gnu.org/gm2.git   (for Modula-2)
 
-The current gcc-16 source package is taken from the git gcc-16-branch.
+The current gcc-14 source package is taken from the git gcc-14-branch.
 
 Changes: See changelog.Debian.gz
 
@@ -19,18 +20,16 @@ library, and documentation as follows:
 
 Language       Compiler package  Library package    Documentation
 ---------------------------------------------------------------------------
-Ada            gnat-16          libgnat-16          gnat-16-doc
-Algol-68       ga68-16          libga68-1          libga68-16-doc
-C              gcc-16                              gcc-16-doc
-C++            g++-16           libstdc++6         libstdc++6-16-doc
-COBOL          gcobol-16        libgcobol1
-D              gdc-16           libgphobos6
-Fortran 95     gfortran-16      libgfortran5       gfortran-16-doc
-Go             gccgo-16         libgo0
-Objective C    gobjc-16         libobjc4
-Objective C++  gobjc++-16
-Modula-2       gm2-16           libgm2             libgm2-16-doc
-Rust           gccrs-16
+Ada            gnat-14          libgnat-14          gnat-14-doc
+C              gcc-14                              gcc-14-doc
+C++            g++-14           libstdc++6         libstdc++6-14-doc
+D              gdc-14
+Fortran 95     gfortran-14      libgfortran5       gfortran-14-doc
+Go             gccgo-14         libgo0
+Objective C    gobjc-14         libobjc4
+Objective C++  gobjc++-14
+Modula-2       gm2-14           libgm2
+Rust           gccrs-14
 
 For some language run-time libraries, Debian provides source files,
 development files, debugging symbols and libraries containing position-
@@ -38,22 +37,22 @@ independent code in separate packages:
 
 Language  Sources      Development   Debugging            Position-Independent
 ------------------------------------------------------------------------------
-C++                                  libstdc++6-16-dbg  libstdc++6-16-pic
-D         libphobos-16-dev
+C++                                  libstdc++6-14-dbg  libstdc++6-14-pic
+D         libphobos-14-dev
 
 Additional packages include:
 
 All languages:
 libgcc1, libgcc2, libgcc4       GCC intrinsics (platform-dependent)
-gcc-16-base                    Base files common to all compilers
-gcc-16-soft-float              Software floating point (ARM only)
-gcc-16-source                  The sources with patches
+gcc-14-base                    Base files common to all compilers
+gcc-14-soft-float              Software floating point (ARM only)
+gcc-14-source                  The sources with patches
 
 Ada:
-libgnat-util16-dev, libgnat-util16   GNAT version library
+libgnat-util14-dev, libgnat-util14   GNAT version library
 
 C:
-cpp-16, cpp-16-doc            GNU C Preprocessor
+cpp-14, cpp-14-doc            GNU C Preprocessor
 libssp0-dev, libssp0            GCC stack smashing protection library
 libquadmath0                    Math routines for the __float128 type
 fixincludes                     Fix non-ANSI header files
@@ -76,7 +75,7 @@ packages are identical to the ones for the lib packages.
 COPYRIGHT STATEMENTS AND LICENSING TERMS
 
 
-GCC is Copyright (C) 1986-2025 Free Software Foundation, Inc.
+GCC is Copyright (C) 1986-2024 Free Software Foundation, Inc.
 
 GCC is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free
@@ -114,7 +113,7 @@ Runtime Library Exception (included in this file):
  - libstdc++-v3
  - libobjc
  - libgfortran
- - The libgnat-16 Ada support library and libgnat-util16 library.
+ - The libgnat-14 Ada support library and libgnat-util14 library.
  - Various config files in gcc/config/ used in runtime libraries.
  - libvtv
 
@@ -479,8 +478,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 D:
-gdc-16                         GNU D Compiler
-libphobos-16-dev               D standard runtime library
+gdc-14                         GNU D Compiler
+libphobos-14-dev               D standard runtime library
 
 The D source package is made up of the following components.
 
@@ -683,7 +682,7 @@ Under Section 7 of GPL version 3, you are granted additional
 permissions described in the GCC Runtime Library Exception, version
 3.1, as published by the Free Software Foundation.
 
-newlib-X.Y.Z/ (only for the offload compilers):
+newlib-X.Y.Z/:
 
 Upstream Authors:
 newlib@sources.redhat.com
@@ -1531,111 +1530,3 @@ contrib/unicode/from_glibc:
 # You should have received a copy of the GNU Lesser General Public
 # License along with the GNU C Library; if not, see
 # <https://www.gnu.org/licenses/>.
-
-gcc/cobol, libgcobol:
-
- * Copyright (c) 2021-2024 Symas Corporation
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
- *
- * * Redistributions of source code must retain the above copyright
- *   notice, this list of conditions and the following disclaimer.
- * * Redistributions in binary form must reproduce the above
- *   copyright notice, this list of conditions and the following disclaimer
- *   in the documentation and/or other materials provided with the
- *   distribution.
- * * Neither the name of the Symas Corporation nor the names of its
- *   contributors may be used to endorse or promote products derived from
- *   this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-gcc/algol68
-
-   Copyright (C) 2025 Jose E. Marchesi.
-
-   This file is NOT part of GCC.
-
-   GCC is free software; you can redistribute it and/or modify it under the
-   terms of the GNU General Public License as published by the Free Software
-   Foundation; either version 3, or (at your option) any later version.
-
-   GCC is distributed in the hope that it will be useful, but WITHOUT ANY
-   WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-   FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-   details.
-
-   You should have received a copy of the GNU General Public License along with
-   GCC; see the file COPYING3.  If not see <http://www.gnu.org/licenses/>.
-
-libga68:
-
-   Copyright (C) 2025 Jose E. Marchesi.
-
-   This file is NOT part of GCC.
-
-   GCC is free software; you can redistribute it and/or modify it under the
-   terms of the GNU General Public License as published by the Free Software
-   Foundation; either version 3, or (at your option) any later version.
-
-   GCC is distributed in the hope that it will be useful, but WITHOUT ANY
-   WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-   FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-   details.
-
-   Under Section 7 of GPL version 3, you are granted additional permissions
-   described in the GCC Runtime Library Exception, version 3.1, as published by
-   the Free Software Foundation.
-
-   You should have received a copy of the GNU General Public License and a copy
-   of the GCC Runtime Library Exception along with this program; see the files
-   COPYING3 and COPYING.RUNTIME respectively.  If not, see
-   <http://www.gnu.org/licenses/>.
-
-gcc/rust/checks/errors/borrowck/ffi-polonius/vendor/
-libgrust/libformat_parser/vendor/
-libgrust/rustc-lib
-
-   Vendored crates are authored by "The Rust Project Developers",
-   licensed under the Apache-2.0/MIT licenses.
-
-   MIT License:
-   
-   Permission is hereby granted, free of charge, to any
-   person obtaining a copy of this software and associated
-   documentation files (the "Software"), to deal in the
-   Software without restriction, including without
-   limitation the rights to use, copy, modify, merge,
-   publish, distribute, sublicense, and/or sell copies of
-   the Software, and to permit persons to whom the Software
-   is furnished to do so, subject to the following
-   conditions:
-
-   The above copyright notice and this permission notice
-   shall be included in all copies or substantial portions
-   of the Software.
-
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
-   ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-   TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-   PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-   SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-   OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
-   IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-   DEALINGS IN THE SOFTWARE.
-
-On Debian GNU/Linux systems, the complete text of Apache 2.0 License
-is in `/usr/share/common-licenses/Apache-2.0'.

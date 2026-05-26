@@ -1,7 +1,8 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: qtbase-everywhere-src
 Source: https://download.qt.io/archive/qt/*/submodules/
-Files-Excluded: src/3rdparty/gradle/gradle/wrapper/gradle-wrapper.jar
+Files-Excluded: examples/xml/htmlinfo
+                src/3rdparty/gradle/gradle/wrapper/gradle-wrapper.jar
                 src/3rdparty/iaccessible2
                 src/3rdparty/sqlite
                 src/3rdparty/wintab
@@ -16,6 +17,7 @@ Files-Excluded: src/3rdparty/gradle/gradle/wrapper/gradle-wrapper.jar
 
 # Removed non-free files:
 # * RFCs (see QTBUG-30544 and QTBUG-30545)
+# * htmlinfo example which contains non-free websites snapshots
 # * src/3rdparty/gradle — built .jar file without source code
 # * src/3rdparty/iaccessible2 — not preferred form of modification
 # * src/3rdparty/sqlite — not preferred form of modification
@@ -32,7 +34,8 @@ Files: *.qdoc
 Copyright: 2016-2021 The Qt Company Ltd.
 License: GFDL-NIV-1.3
 
-Files: config.tests/static_link_order/*
+Files: conanfile.py
+       config.tests/static_link_order/*
        mkspecs/features/data/dumpvcvars.bat
        qmake/*
        src/corelib/debug_script.py
@@ -2228,7 +2231,9 @@ License: GPL-2+
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
- along with this program.  If not, see https://www.gnu.org/licenses/.
+ along with this program;  if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+ MA 02110-1301, USA.
  .
  On Debian GNU/Linux systems, the complete text of the GNU General
  Public License version 2 can be found in

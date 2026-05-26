@@ -8,7 +8,7 @@ Copyright: 2016-2021 The Qt Company Ltd.
 License: LGPL-3 or GPL-2
 
 Files: debian/*
-Copyright: 2021-2024 Patrick Franz <deltaone@debian.org>
+Copyright: 2021 Patrick Franz <deltaone@debian.org>
            2021 Lu YaNing <dluyaning@gmail.com>
 License: LGPL-3 or GPL-2
 
@@ -20,12 +20,12 @@ Files: *.qdoc
 Copyright: 2017 The Qt Company Ltd.
 License: GFDL-NIV-1.3
 
-Files: src/svg/doc/snippets/*
-       tests/manual/examples/*
+Files: examples/*
+       src/svg/doc/snippets/*
 Copyright: 2016-2017 The Qt Company Ltd.
 License: BSD-3-clause
 
-Files: tests/manual/examples/embedded/fluidlauncher/pictureflow.*
+Files: examples/svg/embedded/fluidlauncher/pictureflow.*
 Copyright: 2007 Ariya Hidayat <ariya@kde.org>
            2017 The Qt Company Ltd.
 License: BSD-3-clause and Expat
@@ -35,7 +35,8 @@ Copyright: 2002 USC/Information Sciences Institute
            2016 The Qt Company Ltd.
 License: LGPL-3 or GPL-2, and HPND-sell-variant
 
-Files: tests/auto/*
+Files: conanfile.py
+       tests/auto/*
        tests/benchmarks/*
        tests/libfuzzer/*
 Copyright: 2016-2021 The Qt Company Ltd.

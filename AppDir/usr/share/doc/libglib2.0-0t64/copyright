@@ -24,7 +24,7 @@ Files-Excluded-unicode-data:
  Jamo.txt
  Name*.html
  Name*.txt
- NormalizationCorrections.txt
+ Normalization*.txt
  Nushu*.txt
  Prop*.txt
  ScriptExtensions.txt
@@ -66,16 +66,16 @@ Copyright:
  2015 Ben Boeckel
  2009 Benjamin Otte
  2023 CaiJingLong
- 2005-2024 Canonical Ltd
+ 2005-2023 Canonical Ltd
  2011 Carlos Garcia Campos
- 2018-2024 Carlos Garnacho
+ 2018 Carlos Garnacho
  2021 Casper Dik
- 2016-2020 Centricular
- 2009-2024 Christian Hergert
+ 2018-2020 Centricular
+ 2009-2022 Christian Hergert
  2008-2010 Christian Kellner
  2009-2010 Christian Persch
  2018-2020 Christoph Reiter
- 2014-2024 Chun-wei Fan
+ 2014-2020 Chun-wei Fan
  2021 Cimbali
  2008 Claus Tondering
  2008 Clemens N. Buss
@@ -88,23 +88,18 @@ Copyright:
  2023 Daniel Carpenter
  2017 Danny Forghieri
  2012 David King
- 2022-2023 David Rheinsberg
  2010 David Zeuthen
  2013-2015 Dieter Verfaillie
  2000 Eazel, Inc
- 2023 Eli Schwartz
  2019-2022 Emmanuel Fleury
  2005-2023 Emmanuele Bassi
  2016-2020 Endless Mobile, Inc
  2017-2022 Endless OS Foundation, LLC
- 2024 Evan Welsh
  2007 Francois Gouget
- 2024 Frank Dana
  2020-2021 Frederic Martinsons
- 1991-2024 Free Software Foundation, Inc
- 2024 Future Crew LLC
+ 1991-2023 Free Software Foundation, Inc
  2015 Garrett Regier
- 2011-2014 Giovanni Campagna
+ 2014 Giovanni Campagna
  2020 Gisle Vanem
  2001-2022 GLib contributors
  2016 GNOME i18n Project for Vietnamese
@@ -133,12 +128,11 @@ Copyright:
  2007 Jürg Billeter
  2018 Kai Kang
  2010 Karo Mkrtchyan
- 2025 Khalid Abu Shawarib
  2013-2015 Lars Uebernickel
  2011 Laszlo Pandy
  2007 Lennart Poettering
  2008 litl, LLC
- 2023-2025 Luca Bacci
+ 2023 Luca Bacci
  2006 Lukas Novotny
  2002 Manish Singh
  2005-2007 Marco Barisione
@@ -166,7 +160,6 @@ Copyright:
  2012 Pavel Vasin
  2018 Pavlo Solntsev
  2018 pdknsk
- 2022 Peter Bloomfield
  1995-2011 Peter Mattis
  1995-2011 Peter Mattis, Spencer Kimball, Josh MacDonald, Sebastian Wilhelmi and others
  2018 Peter Wu
@@ -174,7 +167,7 @@ Copyright:
  2008 Philip Van Hoof
  2022-2023 Philip Withnall
  2011-2022 Ray Strode
- 2000-2024 Red Hat, Inc
+ 2000-2022 Red Hat, Inc
  1999-2003 Red Hat Software
  2014 Robert Roth
  2001 Ron Steinke
@@ -215,9 +208,8 @@ Copyright:
  1999-2000 Tom Tromey
  1998-2004 Tor Lillqvist
  2011 Torsten Schönfeld
- 2024 twlvnn kraftwerk
  1995-1997 Ulrich Drepper
- 2021-2024 Unicode®, Inc
+ 2021 Unicode®, Inc
  2011 William Hua
  2020 William Manley
  2018 Will Thompson
@@ -358,23 +350,6 @@ Copyright:
 License: LGPL-2+
 
 Files:
- .gitignore
- */.gitignore
- fuzzing/*.corpus
- fuzzing/*.dict
- gio/tests/cert-tests/*.p12
- gio/tests/cert-tests/*.pem
- gio/tests/desktop-files/**.desktop
- gio/tests/schema-tests/*.gschema.xml
- gio/tests/thumbnails/*.png
- glib/tests/bookmarks/*.xbel
- glib/tests/markups/*.cdata-as-text
- glib/tests/markups/*.expected
- glib/tests/markups/*.gmarkup
-Copyright: none or unspecified
-License: CC0-1.0
-
-Files:
  glib/libcharset/*
 Copyright:
  2000-2006 Free Software Foundation, Inc.
@@ -413,6 +388,26 @@ Copyright: none
 License: Iconv-PD
 
 Files:
+ fuzzing/*.corpus
+ fuzzing/*.dict
+ gio/tests/cert-tests/*.p12
+ gio/tests/cert-tests/*.pem
+ gio/tests/desktop-files/**.desktop
+ gio/tests/schema-tests/*.gschema.xml
+ gio/tests/thumbnails/*.png
+ glib/tests/bookmarks/*.xbel
+ glib/tests/markups/*.cdata-as-text
+ glib/tests/markups/*.expected
+ glib/tests/markups/*.gmarkup
+Copyright: none or unspecified
+License: CC0-1.0
+
+Files:
+ gio/gwin32api-application-activation-manager.h
+ gio/gwin32api-iterator.h
+ gio/gwin32api-misc.h
+ gio/gwin32api-package.h
+ gio/gwin32api-storage.h
  glib/dirent/dirent.c
  glib/dirent/dirent.h
 Copyright: none
@@ -428,13 +423,13 @@ Files:
  glib/tests/NormalizationTest.txt
  unicode-data/*
 Copyright:
- 2021-2024 Unicode®, Inc.
+ 2021-2022 Unicode®, Inc.
 License: Unicode-DFS-2016
 
 Files:
  debian/tests/run-with-locales
  gio/kqueue/*.?
- tests/lib/taptestrunner.py
+ */tests/taptestrunner.py
 Copyright:
  2011-2012 Dmitry Matveev
  2015 Remko Tronçon
@@ -482,6 +477,10 @@ Copyright:
  2000-2017, Julian Seward
 License: bzip2-1.0.6
 
+Files: docs/reference/gio/menu-model.png
+Copyright: unspecified
+License: CC-BY-SA-3.0
+
 Files: docs/reference/glib/gvariant-*.svg
 Copyright: 2022 Philip Withnall
 License: CC-BY-SA-3.0
@@ -511,6 +510,7 @@ License: cmph
  On Debian systems, a copy of the MPL version 1.1 can be found in
  /usr/share/common-licenses/MPL-1.1.
 
+# ----------------------------------------------------------------------
 
 License: AFL-2.0
  The Academic Free License

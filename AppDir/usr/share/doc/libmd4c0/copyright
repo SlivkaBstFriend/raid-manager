@@ -8,9 +8,13 @@ License: Expat
 
 Files: debian/*
 Copyright: 2019 Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
-           2019-2024 Patrick Franz <deltaone@debian.org>
-           2024 Andrea Pappacoda <andrea@pappacoda.it>
 License: Expat
+
+Files: md2html/cmdline.c
+       md2html/cmdline.h
+Copyright: 2006 Brian Raiter
+License: public-domain
+ This code is in the public domain.
 
 Files: test/*
 Copyright: 2014 John MacFarlane
