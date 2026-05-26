@@ -166,8 +166,19 @@ void MdadmBackend::parseMdstat()
             markDiskSegment(dname, ri.dev, ri.level, failed);
         }
 
-        ri.status = (activeStr == "inactive") ? RaidStatus::Failed : RaidStatus::Active;
+ri.status = (activeStr == "inactive") ? RaidStatus::Failed : RaidStatus::Active;
 
+// Проверяем деградацию по количеству активных дисков
+// Формат в /proc/mdstat: [2/1] означает нужно 2, работает 1
+QRegularExpression degradeRe("\\[(\\d+)/(\\d+)\\]");
+QRegularExpressionMatch dm = degradeRe.match(
+    content.mid(m.capturedStart()));
+if (dm.hasMatch()) {
+    int needed  = dm.captured(1).toInt();
+    int working = dm.captured(2).toInt();
+    if (working < needed && ri.status == RaidStatus::Active)
+        ri.status = RaidStatus::Degraded;
+}
         QRegularExpressionMatch sm = syncRe.match(content.mid(m.capturedStart()));
         if (sm.hasMatch()) {
             ri.status = RaidStatus::Syncing;
