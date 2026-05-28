@@ -66,7 +66,6 @@ chmod +x build.sh
 
 ---
 
-Скачайте последний релиз со страницы [Releases](https://github.com/SlivkaBstFriend/raid-manager/releases):
 
 ```bash
 # Автоматическая установка
