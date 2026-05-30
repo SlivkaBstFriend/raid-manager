@@ -13,6 +13,8 @@ public:
     void refresh();
     void applyQueue(const QStringList &commands);
     void removeStoppedRaid(const QString &dev);
+    void addDevToDelete(const QString &dev) { m_devsToDelete.append(dev); }
+    void clearDevsToDelete() { m_devsToDelete.clear(); }
 
     const QList<DiskInfo> &disks() const { return m_disks; }
     const QList<RaidInfo> &raids() const { return m_raids; }
@@ -43,4 +45,5 @@ private:
     QStringList m_queue;
     int         m_queueIdx   = 0;
     bool        m_queueError = false;
+    QStringList m_devsToDelete;
 };

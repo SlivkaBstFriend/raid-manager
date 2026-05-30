@@ -314,6 +314,8 @@ void MainWindow::actionDeleteArray()
         cmds << "mdadm --zero-superblock --force " + d;
 
     m_devToDelete = r->dev;
+    m_devsToDeleteList.append(r->dev);
+    m_backend->addDevToDelete(r->dev);
     enqueue(cmds);
 }
 
@@ -485,11 +487,15 @@ void MainWindow::onAllDone(bool anyError)
 {
     if (m_progress) { m_progress->close(); delete m_progress; m_progress=nullptr; }
 
-    if (!m_devToDelete.isEmpty()) {
-        m_backend->removeStoppedRaid(m_devToDelete);
-        if (m_selectedRaidDev == m_devToDelete)
+    for (const QString &dev : m_devsToDeleteList) {
+        m_backend->removeStoppedRaid(dev);
+        if (m_selectedRaidDev == dev)
             m_selectedRaidDev.clear();
+    }
+    if (!m_devsToDeleteList.isEmpty()) {
+        m_devsToDeleteList.clear();
         m_devToDelete.clear();
+        m_backend->clearDevsToDelete();
         updateActions();
     }
 

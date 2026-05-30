@@ -58,6 +58,7 @@ private:
 
     int m_selectedRaidId = -1;
     QString m_selectedRaidDev;
-    QString m_devToDelete; // надёжнее чем id
+    QString m_devToDelete;
+    QStringList m_devsToDeleteList; // надёжнее чем id
     QProgressDialog *m_progress = nullptr;
 };
