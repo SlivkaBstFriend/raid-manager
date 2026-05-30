@@ -38,6 +38,6 @@ private:
     void buildRects(int w);
     static constexpr int ROW_H   = 38;
     static constexpr int LABEL_W = 60;
-    static constexpr int SIZE_W  = 48;
+    static constexpr int SIZE_W  = 64;
     static constexpr int VGAP    = 6;
 };

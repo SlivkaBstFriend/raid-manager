@@ -102,8 +102,8 @@ void DiskVisualWidget::paintEvent(QPaintEvent *)
         QString sizeStr = d.sizeGB >= 1000
             ? QString::number(d.sizeGB / 1000) + "T"
             : QString::number(d.sizeGB) + "G";
-        p.drawText(QRect(width() - SIZE_W, y, SIZE_W - 2, ROW_H),
-                   Qt::AlignVCenter | Qt::AlignRight, sizeStr);
+        p.drawText(QRect(width() - SIZE_W + 4, y, SIZE_W - 4, ROW_H),
+                   Qt::AlignVCenter | Qt::AlignLeft, sizeStr);
 
         // Hovered row background
         if (m_hoveredDisk == d.name) {
