@@ -201,7 +201,8 @@ void MdadmBackend::markDiskSegment(const QString &diskName, const QString &raidD
         case 0:  st = SegmentType::Raid0; break;
         case 1:  st = SegmentType::Raid1; break;
         case 5:  st = SegmentType::Raid5; break;
-        case 6:  st = SegmentType::Raid6; break;
+        case 6:  st = SegmentType::Raid6;  break;
+        case 10: st = SegmentType::Raid10; break;
         default: st = SegmentType::Raid1; break;
     }
     if (failed) st = SegmentType::Failed;

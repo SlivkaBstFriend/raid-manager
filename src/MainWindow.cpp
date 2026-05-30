@@ -136,6 +136,7 @@ void MainWindow::setupUi()
     addLeg("#1D9E75","RAID 1");
     addLeg("#BA7517","RAID 5");
     addLeg("#D85A30","RAID 6");
+    addLeg("#534AB7","RAID 10");
     addLeg("#D4537E","Запасной");
     addLeg("#E24B4A","Сбой");
     ll->addStretch();
